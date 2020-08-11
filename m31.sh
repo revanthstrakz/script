@@ -22,7 +22,9 @@ sudo apt-get --force-yes --yes install bc \
             texinfo \
             u-boot-tools \
             xz-utils \
-            zlib1g-dev
+            zlib1g-dev \
+	    libz3-dev \
+	    
 git clone --depth=1 https://github.com/revanthstrakz/azure-clang.git clang-llvm
 TC_DIR=$(pwd)/clang-llvm
 git clone --depth=1 https://github.com/revanthstrakz/SM-M315F-Kernel.git source
