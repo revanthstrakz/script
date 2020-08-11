@@ -25,6 +25,7 @@ blocks:
           - echo "Permissions" 
       - name: execute
         commands:
+          - ls
           - ./m31.sh
           - echo "Starting" 
     
