@@ -1,0 +1,24 @@
+version: v1.0
+name: Initial Pipeline
+agent:
+  machine:
+    type: e1-standard-8
+    os_image: ubuntu1804
+execution_time_limit:
+  hours: 1
+fail_fast:
+  stop:
+    when: 'true'
+blocks:
+  - name: 'Block #1'
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - ls
+        - name: 'Job #2'
+          commands:
+            - chmod a+x m31.sh
+        - name: 'Job #3'
+          commands:
+            - ./m31.sh
