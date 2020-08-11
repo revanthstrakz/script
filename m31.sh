@@ -1,9 +1,12 @@
 #! /bin/bash
-git clone --depth=1 https://github.com/Panchajanya1999/azure-clang.git clang-llvm
-TC_DIR=~/android/toolchain/clang-llvm
+git clone --depth=1 https://github.com/revanthstrakz/azure-clang.git clang-llvm
+TC_DIR=$(pwd)/clang-llvm
+git clone --depth=1 https://github.com/revanthstrakz/SM-M315F-Kernel.git source
+cd source
 export KBUILD_BUILD_USER="Revanth"
 export ARCH=arm64
 export SUBARCH=arm64
+export ANDROID_MAJOR_VERSION=q
 KBUILD_COMPILER_STRING=$("$TC_DIR"/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')
 PATH=$TC_DIR/bin/:$PATH
 MAKE+=(
@@ -20,6 +23,7 @@ make -j"$PROCS" O=out \
 		NM=llvm-nm \
 		OBJCOPY=llvm-objcopy \
 		LD=ld.lld "${MAKE[@]}" 2>&1 | tee error.log
-
+exit
+exit
 
 	
