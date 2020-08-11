@@ -1,0 +1,30 @@
+version: v1.0
+name: Using execution_time_limit
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+execution_time_limit:
+  hours: 3
+
+blocks:
+  - name: A
+    task:
+      jobs:
+      - name: Docker build
+        commands:
+          - ls
+          - sleep 1
+
+  - name: B
+    task:
+      jobs:
+      - name: Building job
+        commands:
+          - chmod a+x m31.sh
+          - echo "Permissions" 
+      - name: execute
+        commands:
+          - ./m31.sh
+          - echo "Starting" 
+    
