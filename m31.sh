@@ -31,6 +31,7 @@ export KBUILD_BUILD_USER="Revanth"
 export ARCH=arm64
 export SUBARCH=arm64
 export ANDROID_MAJOR_VERSION=q
+sudo /sbin/ldconfig -v
 KBUILD_COMPILER_STRING=$("$TC_DIR"/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')
 PATH=$TC_DIR/bin/:$PATH
 MAKE+=(
