@@ -1,4 +1,28 @@
 #! /bin/bash
+
+#dependencies
+sudo apt-get --force-yes --yes install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
+sudo apt-get --force-yes --yes install bc \
+            bison \
+            ca-certificates \
+            ccache \
+            clang \
+            cmake \
+            curl \
+            file \
+            flex \
+            gcc \
+            g++ \
+            git \
+            libelf-dev \
+            libssl-dev \
+            make \
+            ninja-build \
+            python3 \
+            texinfo \
+            u-boot-tools \
+            xz-utils \
+            zlib1g-dev
 git clone --depth=1 https://github.com/revanthstrakz/azure-clang.git clang-llvm
 TC_DIR=$(pwd)/clang-llvm
 git clone --depth=1 https://github.com/revanthstrakz/SM-M315F-Kernel.git source
