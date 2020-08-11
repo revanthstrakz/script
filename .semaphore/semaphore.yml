@@ -6,10 +6,13 @@ agent:
     os_image: ubuntu1804
 execution_time_limit:
   hours: 1
-fail_fast:
-  stop:
-    when: 'true'
 blocks:
+  - name: Block A
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - ls
   - name: 'Block #1'
     task:
       jobs:
