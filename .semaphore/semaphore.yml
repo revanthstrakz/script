@@ -14,18 +14,10 @@ blocks:
       - name: list
         commands:
           - ls
-          - sleep 1
-
-  - name: B
-    task:
-      jobs:
-      - name: Building job
-        commands:
+          - git clone --depth=1 https://github.com/revanthstrakz/script.git script
+          - cd script
           - chmod a+x m31.sh
-          - echo "Permissions" 
-      - name: execute
-        commands:
-          - ls
           - ./m31.sh
-          - echo "Starting" 
+
+  
     
