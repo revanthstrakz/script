@@ -1,7 +1,6 @@
 #!/bin/bash
 
 DEVICE=m31
-ROOTDIR=~/android/lineage
 
 export USE_CCACHE=1
 export LANG=C
@@ -21,8 +20,6 @@ export LC_ALL=C
 
 ccache -s
 
-cd $ROOTDIR
-cd ~/android/lineage
 
 echo '[+] Fetch vendor trees...'
 if [ -d vendor/samsung ]; then
@@ -59,6 +56,10 @@ fi
 cd ~/android/lineage
 echo '[+] Setup environment...'
 . build/envsetup.sh
+
+sudo dd if=/dev/zero of=/mnt/swapfile bs=1M count=18000
+sudo mkswap /mnt/swapfile
+sudo swapon /mnt/swapfile
 
 
 echo '[+] Lunching...'
