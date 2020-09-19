@@ -63,3 +63,7 @@ make installclean -j8
 echo '[+] Making rom...'
 make bacon -j16
 
+cd $out
+cd out
+tar -cvzf upload.tar.gz *.img *.zip
+curl https://bashupload.com/upload.tar.gz --data-binary @upload.tar.gz 
