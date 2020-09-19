@@ -1,0 +1,78 @@
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-focal
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    # Runs a single command using the runners shel    
+    - name: update
+      run: sudo apt update
+    - name: packages
+      run: sudo apt install tar bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev python
+    - name: list
+      run: ls
+    - name: list
+      run: df -h
+    - name: nproc
+      run: nproc
+    - name: tools
+      run: curl -O https://dl.google.com/android/repository/platform-tools-latest-linux.zip
+    - name: mkdir
+      run: mkdir -p ~/bin
+    - name: mkdir
+      run: mkdir -p ~/android/lineage
+    - name: unzip platform tools
+      run: curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+    - name: unzip platform tools
+      run: chmod a+x ~/bin/repo
+    - name: mkdir
+      run: git config --global user.email "dr.revanthstrakz@gmail.com"
+    - name: mkdir
+      run: git config --global user.name "Revanth Strakz"
+    - name: mkdir
+      run: PATH=~/platform-tools:$PATH
+    - name: mkdir
+      run: PATH=~/bin:$PATH
+    - name: mkdir
+      run: cd ~/android/lineage
+    - name: mkdir
+      run: repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-17.1
+    - name: mkdir
+      run: repo sync
+    - name: list
+      run: ls
+    - name: cd home
+      run: cd ~
+    - name: list
+      run: ls
+    - name: getting script
+      run: wget https://raw.githubusercontent.com/revanthstrakz/script/master/lineage_m31.bash
+    - name: permissions for script
+      run: chmod a+x lineage_m31.bash
+    - name: executing sxript
+      run: ./lineage_m31.bash
+    - name: cd out
+      run: cd $OUT
+    - name: list
+      run: ls
+    - name: list
+      run: tar -cvzf upload.tar.gz *
+    - name: list
+      run: curl https://bashupload.com/upload.tar.gz --data-binary @upload.tar.gz 
