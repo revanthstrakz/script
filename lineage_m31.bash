@@ -5,17 +5,6 @@ DEVICE=m31
 export USE_CCACHE=1
 export LANG=C
 
-if [ -z $DEVICE ]; then
-    echo DEVICE not set
-    exit 1
-fi
-
-if [ -z $ROOTDIR ]; then
-    echo ROOTDIR not set
-    exit 1
-fi
-
-
 export LC_ALL=C
 
 ccache -s
