@@ -53,7 +53,10 @@ else
 	git clone --depth=1 https://github.com/erfanoabdi/android_kernel_samsung_universal9610 -b lineage-17.1_older kernel/samsung/universal9610
 fi
 
-cd ~/android/lineage
+git clone --depth=1 https://github.com/LineageOS/android_hardware_samsung -b lineage-17.1 hardware/samsung
+git clone --depth=1 https://github.com/LineageOS/android_hardware_samsung_slsi_fm -b lineage-17.1 hardware/samsung_slsi/fm
+
+
 echo '[+] Setup environment...'
 . build/envsetup.sh
 
