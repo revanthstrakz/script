@@ -45,7 +45,13 @@ fi
 git clone --depth=1 https://github.com/LineageOS/android_hardware_samsung -b lineage-17.1 hardware/samsung
 git clone --depth=1 https://github.com/LineageOS/android_hardware_samsung_slsi_fm -b lineage-17.1 hardware/samsung_slsi/fm
 
-
+df -h 
+ls -al
+rm -rf .repo
+rm -rf .git
+rm -rf */.git
+df -h
+ls -al
 echo '[+] Setup environment...'
 . build/envsetup.sh
 
