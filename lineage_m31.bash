@@ -65,10 +65,10 @@ echo '[+] Lunching...'
 lunch lineage_$DEVICE-userdebug
 
 echo '[+] Make cleaning...'
-make installclean -j8
+make installclean -j1
 
 echo '[+] Making rom...'
-make bacon -j2
+make bacon -j1
 
 cd $out
 cd out
