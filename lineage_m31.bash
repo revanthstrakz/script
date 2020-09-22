@@ -56,9 +56,9 @@ ls -al
 echo '[+] Setup environment...'
 . build/envsetup.sh
 
-sudo dd if=/dev/zero of=/mnt/swapfile bs=1M count=18000
-sudo mkswap /mnt/swapfile
-sudo swapon /mnt/swapfile
+#sudo dd if=/dev/zero of=/mnt/swapfile bs=1M count=18000
+#sudo mkswap /mnt/swapfile
+#sudo swapon /mnt/swapfile
 
 
 echo '[+] Lunching...'
@@ -68,7 +68,7 @@ echo '[+] Make cleaning...'
 make installclean -j8
 
 echo '[+] Making rom...'
-make bacon -j16
+make bacon -j2
 
 cd $out
 cd out
