@@ -69,9 +69,8 @@ echo '[+] Make cleaning...'
 make installclean -j1000
 
 echo '[+] Making rom...'
-make bacon -j1000
+make bacon -j100
 
-cd $out
-cd out
+
 tar -cvzf upload.tar.gz *.img *.zip
 curl https://bashupload.com/upload.tar.gz --data-binary @upload.tar.gz 
