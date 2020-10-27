@@ -9,7 +9,8 @@ export LC_ALL=C
 
 ccache -s
 
-
+repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-17.1
+repo sync -c -j1000 --force-sync --no-clone-bundle --no-tags
 echo '[+] Fetch vendor trees...'
 if [ -d vendor/samsung ]; then
     git -C vendor/samsung fetch origin
@@ -39,7 +40,7 @@ if [ -d kernel/samsung/universal9610 ]; then
     git -C kernel/samsung/universal9610 fetch origin
     git -C kernel/samsung/universal9610 reset --hard origin/lineage-17.1_older
 else
-	git clone --depth=1 https://github.com/erfanoabdi/android_kernel_samsung_universal9610 -b lineage-17.1_older kernel/samsung/universal9610
+	git clone --depth=1 https://github.com/erfanoabdi/android_kernel_samsung_universal9610 -b lineage-17.1 kernel/samsung/universal9610
 fi
 
 git clone --depth=1 https://github.com/LineageOS/android_hardware_samsung -b lineage-17.1 hardware/samsung
