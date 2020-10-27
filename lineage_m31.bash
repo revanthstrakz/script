@@ -38,7 +38,7 @@ fi
 #rm -rf kernel/samsung/universal9610
 if [ -d kernel/samsung/universal9610 ]; then
     git -C kernel/samsung/universal9610 fetch origin
-    git -C kernel/samsung/universal9610 reset --hard origin/lineage-17.1_older
+    git -C kernel/samsung/universal9610 reset --hard origin/lineage-17.1
 else
 	git clone --depth=1 https://github.com/erfanoabdi/android_kernel_samsung_universal9610 -b lineage-17.1 kernel/samsung/universal9610
 fi
@@ -66,10 +66,10 @@ echo '[+] Lunching...'
 lunch lineage_$DEVICE-userdebug
 
 echo '[+] Make cleaning...'
-make installclean -j1
+make installclean -j1000
 
 echo '[+] Making rom...'
-make bacon -j1
+make bacon -j1000
 
 cd $out
 cd out
