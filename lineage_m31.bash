@@ -57,9 +57,9 @@ ls -al
 echo '[+] Setup environment...'
 . build/envsetup.sh
 
-#sudo dd if=/dev/zero of=/mnt/swapfile bs=1M count=18000
-#sudo mkswap /mnt/swapfile
-#sudo swapon /mnt/swapfile
+sudo dd if=/dev/zero of=/mnt/swapfile bs=1M count=10000
+sudo mkswap /mnt/swapfile
+sudo swapon /mnt/swapfile
 
 
 echo '[+] Lunching...'
