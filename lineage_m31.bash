@@ -71,6 +71,3 @@ make installclean -j1000
 echo '[+] Making rom...'
 make bacon -j100
 
-
-tar -cvzf upload.tar.gz *.img *.zip
-curl https://bashupload.com/upload.tar.gz --data-binary @upload.tar.gz 
