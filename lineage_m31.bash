@@ -11,9 +11,10 @@ curl https://storage.googleapis.com/git-repo-downloads/repo > /content/bin/repo
 chmod a+x /content/bin/repo
 git config --global user.email "dr.revanthstrakz@gmail.com"
 git config --global user.name "Revanth Strakz"
+git config --global color.ui false
 PATH=pwd/platform-tools:$PATH
 PATH=/content/bin:$PATH
-repo init --depth=1 -y -u https://github.com/LineageOS/android.git -b lineage-17.1
+repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-17.1
 repo sync -c -j1000 --force-sync --no-clone-bundle --no-tags
 
 
