@@ -11,6 +11,8 @@ git config --global user.email "dr.revanthstrakz@gmail.com"
 git config --global user.name "Revanth Strakz"
 PATH=~/platform-tools:$PATH
 PATH=~/bin:$PATH
+repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-17.1
+repo sync -c -j1000 --force-sync --no-clone-bundle --no-tags
 
 
 
@@ -23,8 +25,6 @@ export LC_ALL=C
 
 ccache -s
 
-repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-17.1
-repo sync -c -j1000 --force-sync --no-clone-bundle --no-tags
 echo '[+] Fetch vendor trees...'
 if [ -d vendor/samsung ]; then
     git -C vendor/samsung fetch origin
@@ -63,17 +63,14 @@ git clone --depth=1 https://github.com/LineageOS/android_hardware_samsung_slsi_f
 df -h 
 ls -al
 ( find . -type d -name ".git" && find . -name ".gitignore" && find . -name ".gitmodules" ) | xargs -d '\n' rm -rf
-rm -rf .repo
-rm -rf .git
-rm -rf */.git
-df -h
+#rm -rf .repo
+#rm -rf .git
+#rm -rf */.git
+#df -h
 ls -al
 echo '[+] Setup environment...'
 . build/envsetup.sh
 
-sudo dd if=/dev/zero of=/mnt/swapfile bs=1M count=10000
-sudo mkswap /mnt/swapfile
-sudo swapon /mnt/swapfile
 
 
 echo '[+] Lunching...'
