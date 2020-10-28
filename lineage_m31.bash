@@ -5,6 +5,7 @@ sudo apt install tar bc bison build-essential ccache curl flex g++-multilib gcc-
 df -h
 nproc
 curl -O https://dl.google.com/android/repository/platform-tools-latest-linux.zip
+mkdir ~/bin/
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+x ~/bin/repo
 git config --global user.email "dr.revanthstrakz@gmail.com"
