@@ -65,10 +65,10 @@ git clone --depth=1 https://github.com/LineageOS/android_hardware_samsung_slsi_f
 df -h 
 ls -al
 ( find . -type d -name ".git" && find . -name ".gitignore" && find . -name ".gitmodules" ) | xargs -d '\n' rm -rf
-#rm -rf .repo
-#rm -rf .git
-#rm -rf */.git
-#df -h
+rm -rf .repo
+rm -rf .git
+rm -rf */.git
+df -h
 ls -al
 echo '[+] Setup environment...'
 . build/envsetup.sh
