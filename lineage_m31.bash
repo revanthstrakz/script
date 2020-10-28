@@ -5,13 +5,14 @@ sudo apt install tar bc bison build-essential ccache curl flex g++-multilib gcc-
 df -h
 nproc
 curl -O https://dl.google.com/android/repository/platform-tools-latest-linux.zip
-mkdir ~/bin/
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-chmod a+x ~/bin/repo
+unzip platform-tools-latest-linux.zip
+mkdir /content/bin/
+curl https://storage.googleapis.com/git-repo-downloads/repo > /content/bin/repo
+chmod a+x /content/bin/repo
 git config --global user.email "dr.revanthstrakz@gmail.com"
 git config --global user.name "Revanth Strakz"
-PATH=~/platform-tools:$PATH
-PATH=~/bin:$PATH
+PATH=pwd/platform-tools:$PATH
+PATH=/content/bin:$PATH
 repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-17.1
 repo sync -c -j1000 --force-sync --no-clone-bundle --no-tags
 
