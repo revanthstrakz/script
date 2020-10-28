@@ -1,5 +1,19 @@
 #!/bin/bash
 
+sudo apt install tar bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev python
+
+df -h
+nproc
+curl -O https://dl.google.com/android/repository/platform-tools-latest-linux.zip
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+git config --global user.email "dr.revanthstrakz@gmail.com"
+git config --global user.name "Revanth Strakz"
+PATH=~/platform-tools:$PATH
+PATH=~/bin:$PATH
+
+
+
 DEVICE=m31
 
 export USE_CCACHE=1
