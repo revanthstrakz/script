@@ -7,7 +7,7 @@ nproc
 curl -O https://dl.google.com/android/repository/platform-tools-latest-linux.zip
 unzip platform-tools-latest-linux.zip
 mkdir ~/bin/
-curl https://storage.googleapis.com/git-repo-downloads/repo > /content/bin/repo
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+x ~/bin/repo
 git config --global user.email "dr.revanthstrakz@gmail.com"
 git config --global user.name "Revanth Strakz"
