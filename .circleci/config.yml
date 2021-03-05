@@ -3,9 +3,14 @@ version: 2.1
 workflows:
   sample:
     jobs:
-      - build-and-test
+      - recurr
+nightly:
+  triggers:
+    - schedule:
+        cron: 0 17 * * 1-5
+
 jobs:
-  build-and-test:
+  recurr:
     docker:
       - image: cimg/python:3.8
     steps:
