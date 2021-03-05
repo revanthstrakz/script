@@ -23,7 +23,7 @@ jobs:
           command: cd recurr
       - run:
           name: permissions
-          command: chmod a+x ini.sh
+          command: ls 
       - run:
           name: Bang
           command: ls 
