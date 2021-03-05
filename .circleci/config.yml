@@ -26,6 +26,6 @@ jobs:
           command: chmod a+x ini.sh
       - run:
           name: Bang
-          command: ./ini.sh
+          command: ls 
 
 
