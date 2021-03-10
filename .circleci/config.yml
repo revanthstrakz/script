@@ -8,6 +8,8 @@ nightly:
   triggers:
     - schedule:
         cron: 0 17 * * 1-5
+  jobs:
+    - recurr
 
 jobs:
   recurr:
