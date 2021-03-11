@@ -3,16 +3,23 @@ version: 2.1
 workflows:
   sample:
     jobs:
-      - recurr
-nightly:
-  triggers:
-    - schedule:
-        cron: 0 17 * * 1-5
-  jobs:
-    - recurr
+      - build
+
+  nightly:
+    triggers:
+      - schedule:
+          cron: 0 17 * * 1,2,3,4,5
+          filters:
+            branches:
+              only:
+                - main
+            
+    jobs:
+      - build
+
 
 jobs:
-  recurr:
+  build:
     docker:
       - image: cimg/python:3.8
     steps:
@@ -35,5 +42,4 @@ jobs:
       - run:
           name: Bang
           command: ./recurr/ini.sh
-
 
