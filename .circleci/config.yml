@@ -1,0 +1,45 @@
+version: 2.1
+
+workflows:
+  sample:
+    jobs:
+      - build
+
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 17 * * *"
+          filters:
+            branches:
+              only:
+                - main
+            
+    jobs:
+      - build
+
+
+jobs:
+  build:
+    docker:
+      - image: cimg/python:3.8
+    steps:
+      - checkout
+      - run:
+          name: Clone
+          command: git clone git@github.com:revanthstrakz/recurr.git
+      - run:
+          name: c
+          command: git config --global user.email "dr.revanthstrakz@gmail.com"
+      - run:
+          name: Bang
+          command: git config --global user.name "Thopucherla Revanth Rao"
+      - run:
+          name: Bang
+          command: python3 -m pip install pandas numpy feather-format yfinance Ipython
+      - run:
+          name: permissions
+          command: chmod a+x recurr/ini.sh 
+      - run:
+          name: Bang
+          command: ./recurr/ini.sh
+
